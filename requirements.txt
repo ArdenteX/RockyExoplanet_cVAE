@@ -5,7 +5,7 @@ scipy==1.13.1
 seaborn==0.13.2
 # torch==2.5.1+cu124
 tqdm==4.67.0
-tortreinador==0.2.1
+tortreinador==0.2.4
 pandas==2.2.3
 joblib==1.4.2
 notebook

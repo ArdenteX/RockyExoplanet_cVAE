@@ -111,9 +111,7 @@ class Decoder(nn.Module):
 
         self.fc_z2 = nn.Linear(self.num_hidden * 2, self.num_hidden * 2)
 
-        self.fc_z3 = nn.Linear(self.num_hidden * 2, self.num_hidden * 2)
-
-        self.fc_z4 = nn.Linear(self.num_hidden * 2, self.num_hidden)
+        self.fc_z3 = nn.Linear(self.num_hidden * 2, self.num_hidden)
 
         self.fc_out = nn.Linear(self.num_hidden, self.out_dim)
 
@@ -133,8 +131,6 @@ class Decoder(nn.Module):
         h = self.fc_z2(h)
         h = nn.functional.silu(h)
         h = self.fc_z3(h)
-        h = nn.functional.silu(h)
-        h = self.fc_z4(h)
         h = nn.functional.silu(h)
         h = self.fc_out(h)
         return h
